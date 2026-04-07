@@ -49,7 +49,7 @@ app.post('/lagAdresse', (req, res) => {
         let {adresse, breddegrad, lengdegrad} = req.body;
         adresse = adresse.toString().trim();
         breddegrad = breddegrad.toString().trim();
-        lengdegrad = lengdegrad.toString.trim();
+        lengdegrad = lengdegrad.toString().trim();
 
         console.log(`Opprettet adresse ${adresse} ved ${breddegrad}, ${lengdegrad}`)
 
@@ -62,3 +62,10 @@ app.post('/lagAdresse', (req, res) => {
     }
 })
 
+app.get('/api/hentAdresser', (req, res) => {
+    const rows = db.prepare(`
+        SELECT adresse, breddegrad, lengdegrad FROM adresse`).all();
+
+    res.json(rows);
+
+})
