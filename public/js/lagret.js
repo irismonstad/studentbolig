@@ -1,27 +1,38 @@
 // Henter alle lagrede adresser for den innloggede brukeren
 async function hentAdresser() {
-    const res = await fetch('/api/hentAdresser');
+    try {
+        const res = await fetch('/api/hentAdresser');
+
+        // Hvis siden får igjen et resultat, bruk funksjonen visAdresser.
+        if (res.ok) {
+            const adresser = await res.json();
+            visAdresser(adresser);
+        }
+        else {
+            console.error("Kunne ikke hente adresser");
+        }
+    }
+    catch(error) {
+        console.error("Det oppsto en feil ved henting av adresser:", error);
+    }
+}
+
+function visAdresser(adresser) {
     const lagret = document.querySelector("#lagret")
-
-    // Gjør ingenting hvis brukeren ikke har lagrede adresser, viser til default-innholdet på siden som leder brukeren til søkemotoren
-    if (res.ok) {
-        const adresser = await res.json();
-        if (adresser.length === 0) {
-            return;
-        }
-
-        lagret.innerHTML ="";
-
-        for (const adresse of adresser) {
-            let element = document.createElement('div');
-            element.classList.add('adresse');
-            element.innerHTML = `<h2>${adresse.adresse}</h1><hr><p>Lengdegrader: ${adresse.lengdegrad}</p><p>Breddegrader: ${adresse.breddegrad}</p>`
-            lagret.appendChild(element);
-        }
+    if (adresser.length === 0) {
+        return;
     }
-    else {
-        console.error("Kunne ikke hente adresser")
+    
+    // "tømmer" lagret for innhold slik at jeg kan fylle denne med adresseelementer
+    lagret.innerHTML ="";
+
+    for (const adresse of adresser) {
+        let element = document.createElement('div');
+        element.classList.add('adresse');
+        element.innerHTML = `<h2>${adresse.adresse}</h1><hr><p>Lengdegrader: ${adresse.lengdegrad}</p><p>Breddegrader: ${adresse.breddegrad}</p>`
+        lagret.appendChild(element);
     }
+    
 }
 
 // Henter adressene så fort DOM er lastet inn
