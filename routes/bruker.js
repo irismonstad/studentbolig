@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-app.post('/lagBruker', (req, res) => {
+router.post('/lagBruker', (req, res) => {
     try {
         let {mail, mobil, fornavn, etternavn, passord} = req.body;
         mail = mail.toString().trim();

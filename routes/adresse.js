@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require('../db');
 
-app.post('/lagAdresse', (req, res) => {
+router.post('/lagAdresse', (req, res) => {
     try {
         let {adresse, breddegrad, lengdegrad} = req.body;
         adresse = adresse.toString().trim();
@@ -20,7 +20,7 @@ app.post('/lagAdresse', (req, res) => {
     }
 });
 
-app.get('/api/hentAdresser', (req, res) => {
+router.get('/hentAdresser', (req, res) => {
     const rows = db.prepare(`
         SELECT adresse, breddegrad, lengdegrad FROM adresse`).all();
 
