@@ -2,6 +2,7 @@ html, body {
     height:100%;
     padding:0;
     margin:0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #main {
@@ -17,6 +18,27 @@ html, body {
     height:fit-content;
 }
 
+#sok {
+    height:2em;
+    display: flex;
+    gap:1em;
+}
+
+#resultat {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "informasjon kart";
+    padding:1em;
+    gap:1em;
+    height:80vh;
+}
+
 #map {
-    height:600px;
+    grid-area: kart;
+}
+
+#info {
+    grid-area:informasjon;
+    border:1px solid black;
+    overflow-y: auto;
 }

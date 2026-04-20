@@ -19,13 +19,16 @@
     <div id="main">
         <div id="innsending">
             <form id="sok">
-                <label for="adresse">Søk på en adresse: </label>
-                <input type="text" id="adresse">
-                <button type="submit">Søk</button>
+                <!-- <label for="adresse">Søk på en adresse: </label> -->
+                <input type="text" id="adresse" placeholder="Søk på en adresse...">
+                <button type="submit" id="sokknapp">&#x2315;</button>
             </form>
             <button id="lagre">Lagre adresse</button>
         </div>
         <div id="resultat">
+            <div id="info">
+                <h1>Statistikk</h1>
+            </div>
             <div id="map"></div>
         </div>
     </div>
