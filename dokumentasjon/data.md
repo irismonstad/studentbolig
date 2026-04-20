@@ -34,3 +34,15 @@ Fordi gatenavn kan gå igjen, kan det være nødvendig å også ha postnummer fo
 
 **Kommentarer**:
 Jeg ser for meg at denne entiteten må endres senere, men er enkelt forklart hvordan en brukers lagrede adresser skal ligge i databasen. Jeg må ha både adresse og postnummer på grunn av den sammensatte primærnøkkelen i adresse-entiteten. 
+
+## API
+### Kartverket
+For å hente koordinater til å bruke til regning og framstilling av kart valgte jeg å bruke kartverket sitt api. Jeg valgte dette pga. nøyaktighet* ift. norske adresser, samt at dette er gratis. 
+
+*Det er mulig å få opp feil koordinater pga. like adressenavn, men api- lar det skrive f. eks. 'Bergen' på slutten av søket slik at man får riktig plass. 
+
+Rute: 'https://ws.geonorge.no/adresser/v1/sok?sok=' 
+
+### Openstreetmap med Leaflet
+
+## Ruter
