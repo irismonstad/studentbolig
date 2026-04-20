@@ -20,6 +20,9 @@ router.post('/lagAdresse', (req, res) => {
     }
 });
 
+
+
+
 router.get('/hentAdresser', (req, res) => {
     const rows = db.prepare(`
         SELECT adresse, breddegrad, lengdegrad FROM adresse`).all();

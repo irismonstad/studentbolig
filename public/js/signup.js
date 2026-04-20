@@ -1,4 +1,4 @@
-skjema = document.querySelector("#skjema");
+const skjema = document.querySelector("#skjema");
 skjema.addEventListener("submit", lagBruker);
 
 const mailEl = document.querySelector("#mail");

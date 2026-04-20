@@ -2,6 +2,17 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 
+const session = require('express-session');
+
+// Lager en session for å la brukeren holde seg innlogget
+app.use(session({
+    // Nøkkelen burde være noe hemmelig, helst lagret i en .env fil. Jeg har valgt å hardkode den for å lett kunne jobbe på tvers av maskiner. 
+    secret: 'nøkkel',
+    resave: false,
+    saveUninitialized: false,
+    cookie: {maxAge: 24 * 60 * 60 * 1000}
+}));
+
 const PORT = 3000;
 
 const cors = require('cors');

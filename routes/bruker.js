@@ -24,4 +24,31 @@ router.post('/lagBruker', (req, res) => {
     }
 });
 
+router.post('/login', (req, res) => {
+    const {mail, passord} = req.body;
+
+    const bruker = db.prepare('SELECT * from bruker WHERE mail = ?').get(mail);
+
+    if (bruker && bruker.passord === passord) {
+        req.session.brukerId = bruker.id;
+        req.session.fornavn = bruker.fornavn;
+
+        return res.status(200).json({fornavn: bruker.fornavn});
+    }
+    
+    else {
+        return res.status(401).json({ error: "Feil e-post eller passord" });
+    }
+})
+
+// Ruten sjekker om brukeren er logget inn ved å undersøke om det finnes et 
+router.get('api/sjekklogin', (req, res) => {
+    if (req.session.brukerId) {
+        res.json({innlogget: true, fornavn: req.session.fornavn});
+    }
+    else {
+        res.json({innlogget: false});
+    }
+});
+
 module.exports = router;
