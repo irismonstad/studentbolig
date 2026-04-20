@@ -1,3 +1,4 @@
+// HTML for en navigasjonsbar som skal vises på toppen av alle sidene
 const navHTML = 
 `<nav class="globalnav">
     <ul class="lenker">
@@ -10,5 +11,6 @@ const navHTML =
     </ul>
 </nav>`;
 
+// Legger til HTML-en aller først i body-elementet
 document.body.insertAdjacentHTML('afterbegin', navHTML);
 

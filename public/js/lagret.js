@@ -1,7 +1,9 @@
+// Henter alle lagrede adresser for den innloggede brukeren
 async function hentAdresser() {
     const res = await fetch('/api/hentAdresser');
     const lagret = document.querySelector("#lagret")
 
+    // Gjør ingenting hvis brukeren ikke har lagrede adresser, viser til default-innholdet på siden som leder brukeren til søkemotoren
     if (res.ok) {
         const adresser = await res.json();
         if (adresser.length === 0) {
@@ -22,4 +24,5 @@ async function hentAdresser() {
     }
 }
 
+// Henter adressene så fort DOM er lastet inn
 document.addEventListener("DOMContentLoaded", hentAdresser);

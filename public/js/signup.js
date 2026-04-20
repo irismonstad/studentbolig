@@ -25,6 +25,6 @@ async function lagBruker(e) {
 
     const feedback = document.createElement('p')
     document.body.appendChild(feedback);
-    feedback.innerHTML = `<p>${mail} lagt til i databasen`
+    feedback.innerHTML = `<p>${mail} har opprettet bruker!`
 
 };

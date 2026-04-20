@@ -19,3 +19,8 @@
 .lenker li a:hover {
     color: darkgreen;
 }
+
+.globalnav {
+    position: relative;
+    z-index: 1000;
+}

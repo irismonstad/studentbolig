@@ -1,9 +1,12 @@
+// Henter element for skjema og legger eventlistener på submit-knapp
 skjema = document.querySelector("#sok");
 skjema.addEventListener("submit", sokAdresse);
 
+// Egen knapp for å lagre adresse, med egen eventlistener
 lagre = document.querySelector("#lagre");
 lagre.addEventListener("click", lagreAdresse);
 
+// Henter element for adressefeltet
 const adresseEl = document.querySelector("#adresse");
 
 // Variabler for å lagre data om adresse
@@ -19,8 +22,10 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
+// Søker etter en adresse med kartverket sitt api og oppdaterer kartet
 async function sokAdresse(e) {
     e.preventDefault();
+    // Henter ut teksten fra adressefeltet
     const adresseSok = adresseEl.value.trim();
     const resultat = await fetch(`https://ws.geonorge.no/adresser/v1/sok?sok=${adresseSok}`);
     const data = await resultat.json();
@@ -37,7 +42,7 @@ async function sokAdresse(e) {
 }
 
 async function lagreAdresse() {
-    // Legger adresser fra søk i databasen
+    // Legger adresser fra siste søk i databasen
     const res = await fetch('/api/lagreAdresse', {
         method: 'POST',
         headers: {'Content-Type':'application/json'},
