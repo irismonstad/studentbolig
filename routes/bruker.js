@@ -41,8 +41,8 @@ router.post('/login', (req, res) => {
     }
 })
 
-// Ruten sjekker om brukeren er logget inn ved å undersøke om det finnes et 
-router.get('api/sjekklogin', (req, res) => {
+// Ruten sjekker om brukeren er logget inn ved å undersøke om det finnes en session
+router.get('/sjekklogin', (req, res) => {
     if (req.session.brukerId) {
         res.json({innlogget: true, fornavn: req.session.fornavn});
     }
