@@ -6,6 +6,7 @@ const navHTML =
         <li><a href="/html/profil.html">Profil</a></li>
         <li><a href="/html/lagret.html">Lagret</a></li>
         <li><a href="/html/login.html">Logg inn</a></li>
+        <li><a href="/html/signup.html">Sign up</a></li>
     </ul>
 </nav>`;
 
