@@ -31,10 +31,26 @@ router.post('/lagreAdresse', (req, res) => {
 });
 
 router.get('/hentAdresser', (req, res) => {
-    const rows = db.prepare(`
-        SELECT adresse, breddegrad, lengdegrad FROM adresse`).all();
+    if (!req.session.brukerId) {
+        return res.status(401).json({error: "Logg inn for å se lagrede adresser."});
+    }
 
-    res.json(rows);
+    const brukerId = req.session.brukerId;
+
+    try {
+        const rows = db.prepare(`
+            SELECT a.adresse, a.breddegrad, a.lengdegrad
+            FROM adresse a
+            JOIN adresse_bruker ab ON a.id = ab.adresse_id
+            WHERE ab.bruker_id = ?
+        `).all(brukerId);
+
+        res.json(rows);
+    }
+    catch(err) {
+        console.error("Feil ved henting av adresser:", err);
+        res.status(500).json({error:"Kunne ikke hente adresser"});
+    }
 
 });
 
