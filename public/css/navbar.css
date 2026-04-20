@@ -1,0 +1,21 @@
+.lenker {
+    display:flex;
+    background-color: palegreen;
+    width:100%;
+    justify-content:space-evenly;
+    gap:1em;
+    padding:1em;
+    margin:0;
+    list-style-type:none;
+}
+
+.lenker li a {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:black;
+    text-decoration: none;
+    font-style: bold;
+}
+
+.lenker li a:hover {
+    color: darkgreen;
+}

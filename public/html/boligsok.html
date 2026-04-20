@@ -11,19 +11,23 @@
      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <script src="/js/navbar.js" defer></script>
     <script src="../js/boligsok.js" defer></script>
 </head>
 <body>
-    <div id="innsending">
-        <form id="sok">
-            <label for="adresse">Søk på en adresse: </label>
-            <input type="text" id="adresse">
-            <button type="submit">Søk</button>
-        </form>
-        <button id="lagre">Lagre adresse</button>
-    </div>
-    <div id="resultat">
-        <div id="map"></div>
+    <div id="main">
+        <div id="innsending">
+            <form id="sok">
+                <label for="adresse">Søk på en adresse: </label>
+                <input type="text" id="adresse">
+                <button type="submit">Søk</button>
+            </form>
+            <button id="lagre">Lagre adresse</button>
+        </div>
+        <div id="resultat">
+            <div id="map"></div>
+        </div>
     </div>
 </body>
 </html>

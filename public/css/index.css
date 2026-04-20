@@ -8,7 +8,7 @@ label {
     display:none;
 }
 
-body {
+.innhold {
     display:grid;
     place-items: center;
 }

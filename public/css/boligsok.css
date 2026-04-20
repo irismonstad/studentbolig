@@ -4,7 +4,7 @@ html, body {
     margin:0;
 }
 
-body {
+#main {
     display:grid;
     padding: 1em;
     overflow: hidden;
