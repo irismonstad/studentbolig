@@ -1,19 +1,29 @@
+* {
+    box-sizing: border-box; /* Hindrer overflow ved padding */
+}
+
+
 body, html {
     margin:0;
     padding:0;
     height:100%;
+    overflow: hidden;
 }
 
 label {
     display:none;
 }
 
-.innhold {
-    display:grid;
-    place-items: center;
+
+.main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFF8EC;
+    min-height: 100%;
 }
 
-/* Gjør at størrelsen på input-feltet tar opp større bredde av skjermen */
 form {
     display: flex;
     gap: 10px;
