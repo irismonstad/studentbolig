@@ -1,0 +1,38 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF8EC;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#main {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding:1em;
+    display: grid;
+    justify-items: center;
+}
+
+#lagret {
+    display: flex;
+    flex-wrap: wrap;
+    gap:1em;
+    padding:1em;
+}
+
+.adresse {
+    background-color: #DCCCAC;
+    border:1px solid black;
+
+    padding:1em;
+    width:25vw;
+    min-height:10vh;
+}
+
+.adresse:hover {
+    transform: translateY(-5px);
+    border-color: #4CAF50;
+}
