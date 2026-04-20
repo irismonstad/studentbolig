@@ -3,3 +3,33 @@ body, html {
     padding:0;
     height:100%;
 }
+
+label {
+    display:none;
+}
+
+body {
+    display:grid;
+    place-items: center;
+}
+
+/* Gjør at størrelsen på input-feltet tar opp større bredde av skjermen */
+form {
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    max-width: 600px;
+}
+
+input#sok {
+    width: 100%;
+    box-sizing: border-box; 
+    padding: 20px;
+    font-size: 1em;         
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+}
