@@ -15,6 +15,10 @@ label {
     display:none;
 }
 
+#velkomstmelding {
+    font-size: 3em;
+    color: #202b17;
+}
 
 .main {
     display:flex;
@@ -43,4 +47,6 @@ input#sok {
 button {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
+    background-color: #DCCCAC;
+    padding: 1em;
 }

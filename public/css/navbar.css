@@ -7,17 +7,18 @@
     padding:1em;
     margin:0;
     list-style-type:none;
+    border:1px solid #546B41;
 }
 
 .lenker li a {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:black;
+    color:#141c0d;
     text-decoration: none;
     font-style: bold;
 }
 
 .lenker li a:hover {
-    color: darkgreen;
+    color: rgb(2, 68, 2);
 }
 
 .globalnav {
