@@ -5,7 +5,7 @@
 
 ## Databasen
 ### Datamodell
-![Datamodell](../dokumentasjon/datamodell.png)
+![Datamodell](../dokumentasjon/Datamodell.png)
 
 ### Bruker:
 | Navn | Datatype | PK | FK | Unik | Not NULL |
