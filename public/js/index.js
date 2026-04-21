@@ -7,8 +7,10 @@ async function sjekkInnlogging() {
     
     // Sjekker om status.innlogget = true
     if (status.innlogget) {
-        console.log("Velkommen, " + status.fornavn);
-        velkomst.innerHTML = `Velkommen ${status.fornavn}`;
+        const navn = status.fornavn
+        const storforbokstav = navn.charAt(0).toUpperCase() + navn.slice(1);
+        console.log("Velkommen, " + storforbokstav);
+        velkomst.innerHTML = `Velkommen ${storforbokstav}!`;
 
     }
     else {
